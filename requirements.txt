@@ -1,0 +1,9 @@
+# ── 运行检测器所需（仅这两个）──
+numpy>=1.24
+tokenizers>=0.15
+
+# ── 本地微调 / 重新训练（`jury learn --fit`）额外需要 ──
+scikit-learn>=1.3
+
+# ── 打包成单文件 EXE（可选）──
+pyinstaller>=6.0

@@ -1,0 +1,32 @@
+# ★★★ 密钥：绝对不要提交
+.apikey
+.apikey_ds
+*.apikey
+**/.apikey*
+secrets/
+
+# 模型文件（约 40 MB，走 GitHub Release；见 MODELS.md）
+*.pkl
+*.npz
+tokenizer.json
+tokenizer_config.json
+
+# 本地微调产物
+jury_learn.jsonl
+jury_model.pkl
+.jury/
+
+# 构建与缓存
+build/
+dist/
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+.DS_Store
