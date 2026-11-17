@@ -30,3 +30,7 @@ env/
 .idea/
 *.swp
 .DS_Store
+models-v*.zip
+jury-flash-v*.zip
+*.bak*
+EXPERIMENTS.raw.md

@@ -1,0 +1,161 @@
+key,family,definition
+cz_bg_rep,character-level,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+cz_char_ent,character-level,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+cz_cv,character-level,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+cz_doc,character-level,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+cz_line_m,character-level,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+cz_line_max,character-level,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+cz_line_min,character-level,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+cz_line_range,character-level,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+cz_line_sd,character-level,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+cz_tg_rep,character-level,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_burst,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_dis,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_hapax,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_head_tail_jac,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_headtail_minus_mid,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_ni_curv,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_ni_decay,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_ni_m,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_ni_q1,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_ni_q4,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_ni_range,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_ni_slope,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_rep_lag1,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_rep_lag2,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_rep_lag3,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_rep_ratio,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_tail_newratio,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_ttr,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_ttr_q1,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_ttr_q4,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+if_ttr_slope,information flow,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_body,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_causal,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_clause_m,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_clause_sd,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_clauselen_m,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_clauselen_sd,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_digit,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_head_content,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_head_rep,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_head_uniq,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_len_alt,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_material,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_measure,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_multiclause,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_nopunct,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_relay,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_seq,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_spatial,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_tail_content,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_tail_rep,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_tail_uniq,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ls_temporal,line structure,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ng_bg_common,n-gram collocation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ng_bg_content,n-gram collocation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ng_bg_ent,n-gram collocation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ng_bg_lf_m,n-gram collocation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ng_bg_lf_max,n-gram collocation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ng_bg_lf_min,n-gram collocation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ng_bg_lf_p10,n-gram collocation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ng_bg_lf_p90,n-gram collocation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ng_bg_lf_sd,n-gram collocation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ng_bg_rare,n-gram collocation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ng_bg_rep,n-gram collocation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ng_bg_unseen,n-gram collocation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ng_func_next_ent,n-gram collocation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ng_func_next_nuniq,n-gram collocation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ng_tg_rep,n-gram collocation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+ng_tg_unseen,n-gram collocation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_abstract,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_comma_share,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_conc_minus_abs,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_field_dom,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_field_ent,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_func_density,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_nature,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_npunct,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_period_share,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_punct_ent,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_punct_per_line_m,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_punct_per_line_sd,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_punct_uniq_per_line,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_skel_len_m,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_skel_len_sd,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_skel_rep,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_skel_uniq,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_social,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_timew,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sf_tool,semantic field / function words / punctuation,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sl_ac1,sequential LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sl_ac2,sequential LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sl_ac3,sequential LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sl_ac5,sequential LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sl_burst,sequential LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sl_d13,sequential LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sl_ent,sequential LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sl_ls_m,sequential LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sl_ls_max,sequential LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sl_ls_sd,sequential LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sl_mean,sequential LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sl_n,sequential LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sl_per_line,sequential LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sl_sd,sequential LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+sl_slope,sequential LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk1_frac,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk2_frac,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk3_frac,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk_entropy,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk_hapax,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk_kurt,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk_lineend_punct,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk_lineend_sd,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk_linelen_m,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk_linelen_sd,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk_m,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk_per_line_m,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk_per_line_sd,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk_punct_per_line,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk_punct_pl_sd,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk_sd,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk_skew,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk_top1,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tk_ttr,token length,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_hi_frac,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_imax_m,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_imax_max,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_iqr,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_isd_m,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_isd_sd,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_ispan_m,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_kurt,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_lo_frac,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_max,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_mean,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_p10,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_p25,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_p50,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_p75,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_p90,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_p95,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_p99,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_range,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_sd,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_skew,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+tl_top5,token-level LM,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+vo_adj_disjoint,vocabulary organization,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+vo_entropy,vocabulary organization,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+vo_growth_m,vocabulary organization,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+vo_growth_slope,vocabulary organization,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+vo_halfpoint,vocabulary organization,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+vo_hhi,vocabulary organization,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+vo_mattr_m,vocabulary organization,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+vo_mattr_sd,vocabulary organization,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+vo_mattr_slope,vocabulary organization,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+vo_rep_cross,vocabulary organization,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+vo_rep_near,vocabulary organization,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+vo_repdist_m,vocabulary organization,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+vo_repdist_med,vocabulary organization,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+vo_repdist_sd,vocabulary organization,see infoflow.py / ngramfeat.py / cpu_proxy2.py
+vo_zipf,vocabulary organization,see infoflow.py / ngramfeat.py / cpu_proxy2.py

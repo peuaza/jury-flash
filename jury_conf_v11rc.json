@@ -1,0 +1,16 @@
+{
+  "version": "v1.1.0-rc",
+  "model": "_det_multi14_v22d.pkl",
+  "base": "v1.0.1 (default _det_multi14.pkl unchanged)",
+  "decision": "AI if p_ai_total >= threshold[line_band]",
+  "fp_budget": 0.05,
+  "thresholds": {
+    "6-7": 1.0,
+    "8-9": 0.977,
+    "10-14": 0.502,
+    "15+": 0.117
+  },
+  "calibration": "1,372 held-out human poems (6-9:572, 10-14:500, 15+:300)",
+  "source": "jury-flash/EXPERIMENTS.md §J.9",
+  "note": "RC only; do not replace the default model until the paper is finalized."
+}

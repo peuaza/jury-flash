@@ -1,0 +1,18 @@
+{
+  "version": "v1.2.0-rc",
+  "general_model": "_det_multi14_v23.pkl",
+  "short_head": "_short_head_14_np.pkl",
+  "route": "<=14: agreement(short_head, v23); >=15: v23 confidence three-state",
+  "short_thresholds": {
+    "6-9": 0.6855634401389357,
+    "10-14": 0.5561755911946087
+  },
+  "general_bands": {
+    "ai": 0.7,
+    "human": 0.3
+  },
+  "short_fp": "5.1% (6-9, 572 humans) / 5.0% (10-14, 500 humans)",
+  "external": "68: 45 AI / 7 human / 16 uncertain (short-head+v23 agreement)",
+  "author_short": "4 poems: 1 AI / 2 uncertain / 1 human",
+  "note": "RC; default remains v1.0.0/v1.0.1 until paper is finalized."
+}

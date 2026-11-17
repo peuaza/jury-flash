@@ -132,6 +132,16 @@ class Detector:
             _m = _USER_PROBE[0] or model
             W = dict(W)
             W["pthr_c"] = 0.7 if _m == "auto_c" else (0.0 if _m == "auto_p" else 0.7)
+            # ★ 行数路由：本地补丁是在长文本上微调的，直接用到短文本上会把
+            #   人类短诗的误报从 ~1% 抬到 ~8-20%（见 EXPERIMENTS §9.670）。
+            #   ⇒ 默认 route_min_lines=25：比它短就回落到同标签的内置模型。
+            self._route_thr = int(W.get("route_min_lines", 25))
+            self._builtin_path = os.path.join(_HERE, "_det_%s_np.pkl" % _m)
+            self._bi_cache = None
+        else:
+            self._route_thr = 0
+            self._builtin_path = None
+            self._bi_cache = None
         self.is_auto = bool(W.get("kind")) and str(W.get("kind")).startswith(("router", "maxratio", "routeK", "multi14"))
         self.W = W
         self.keys = W.get("keys", [])
@@ -495,11 +505,22 @@ class Detector:
                 "p": a.get("p") if a.get("ok") else b.get("p"),
                 "thr": a.get("thr"), "fp_budget": fp_budget or self.fp_budget,
                 "n_lines": a.get("n_lines") or b.get("n_lines"),
+                "route": a.get("route") or b.get("route"),
                 "top_feats": {"保守(auto_c)": a.get("p"), "激进(auto_p)": b.get("p"),
                               "体裁": ((a.get("top_feats") or {}).get("判定体裁")
                                        or (a.get("top_feats") or {}).get("genre")
                                        or (b.get("top_feats") or {}).get("判定体裁"))},
                 "model": "auto_m"}
+
+    def _builtin_det(self):
+        """本地补丁短文本时回落到同标签的内置模型（懒加载）"""
+        if self._bi_cache is None:
+            try:
+                ok = self._builtin_path and os.path.exists(self._builtin_path)
+                self._bi_cache = Detector(path=self._builtin_path, fp_budget=self.fp_budget) if ok else False
+            except Exception:
+                self._bi_cache = False
+        return self._bi_cache or None
 
     def predict_lines(self, lines, fp_budget=None, clean=True):
         q = fp_budget or self.fp_budget
@@ -510,6 +531,14 @@ class Detector:
         nl = len([x for x in lines if x.strip()])
         if nl < 6:
             return {"ok": False, "error": "行数太少（<6 行）", "n_lines": nl}
+        # ★ 行数路由（只在加载了本地补丁时生效）
+        if getattr(self, "_route_thr", 0) and nl < self._route_thr:
+            B = self._builtin_det()
+            if B is not None:
+                r = B.predict_lines(lines, fp_budget, clean=False)
+                if r.get("ok"):
+                    r["route"] = "builtin(<%d 行)" % self._route_thr
+                return r
         p, v = self.score(lines)
         if p is None:
             return {"ok": False, "error": "特征抽取失败（文本过短或无中文）", "n_lines": nl}

@@ -11,6 +11,9 @@
 | `_train_bank.npz` | ~10.6 MB | 训练特征库（供 `jury learn --fit` 重训） |
 | `_det_multi14.pkl` | ~0.5 MB | 主模型（14 类 MLP 集成） |
 | `_det_*.pkl` | 小 | 各体裁辅助头 |
+| `_det_multi14_v23.pkl` | ~0.5 MB | v1.2 通用模型（≥15 行） |
+| `_short_head_14_np.pkl` | 6 KB | v1.2 短诗头（6–14 行） |
+| `_det_lit_np.pkl` | 373 KB | 短诗头特征头 |
 | `_ref145.pkl` | 小 | 特征参考分布（供 `analysis`） |
 
 ## 获取方式（二选一）
@@ -22,6 +25,9 @@ python tools/download_models.py --repo <用户名>/jury-flash --tag v1.0.0
 ```
 
 **B. 手动**：从 Release 页面下载 `models-v1.0.0.zip`，解压到仓库根目录。
+
+**v1.2.0-rc**：下载 `jury-flash-v1.2.0-rc.zip`（约 22 MB，含完整运行时：代码、分词器、统计 LM、模型与配置），
+解压后直接 `python score_v12.py 诗.txt`。
 
 ## 或者：直接用预编译的 `jury.exe`
 
