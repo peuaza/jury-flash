@@ -14,6 +14,10 @@
 > provenance. Entries marked "pending verification" are provisional; no poem text is included. It is a
 > lab notebook, not a peer-reviewed document.
 
+> **Public research log.** This is the working experiment ledger behind the preprint, released for
+> provenance. Entries marked "pending verification" are provisional; no poem text is included. It is a
+> lab notebook, not a peer-reviewed document.
+
 # jury-flash · EXPERIMENTS
 
 > **本文件是 jury-flash 的唯一实验账本。** 任何新结果先在这里登记（§J 编号、日期、协议、数字、状态），
@@ -775,7 +779,7 @@
 
 ### §J.39 公开特征库（2026-11-18）· 现行
 
-- **产物**：`feature_bank_public.npz`，$8{,}409\times160$ 特征矩阵，`y` 0=人类/1=AI，`source` 来源名，
+- **产物**：`feature_bank_public.npz`，8,409 × 160 特征矩阵，`y` 0=人类/1=AI，`source` 来源名，
   `keys` 与 `feature_dict.csv` 同序；**不含文本**。
 - **来源**：human1000 944、lccc 1,600、poke 207、古文 750、现代诗库 1,990；AI诗 592、同族472、
   AI说明文 312、AI小说 240、AI古文 288、AI通知演讲稿 214、AI问答 195、AI散文 402、chat 40、
@@ -791,6 +795,28 @@
 - **v1.2 三态**：AI **92.5%**（111/120）[86.4,96.0]，人类 4、不确定 5。
 - **结论**：干净跨管线不是崩，而是接近同分布；B2 的“只对同管线有效”担忧被这组数据反驳。
   独立人类 FP 仍按 §J.36：原始 7.1%、三态 AI 3.0%。
+
+### §J.41 留一范式重训（2026-11-18）· 敏感性，不是复现
+
+- **设置**：94 维结构特征 + 逻辑回归；人类池（human1000/lccc/poke/古文/现代诗库）5,491 条，
+  50% 训练 / 50% 校准 FP5；每次留出一个 AI 格，其余格 + 人类训练；阈值取校准人类 95 分位。
+- **结果**：
+
+| 留出格 | n | 行数中位（范围） | FP5 检出 | Wilson 95% CI |
+|---|---:|---:|---:|---:|
+| ai_precise | 118 | 8.0 (8–8) | 90.7% | [84.1, 94.7] |
+| ai_few2 | 96 | 8.0 (8–8) | 87.5% | [79.4, 92.7] |
+| ai_cold | 72 | 8.0 (8–8) | 94.4% | [86.6, 97.8] |
+| ai_poems | 221 | 8.0 (7–9) | 83.3% | [77.8, 87.6] |
+| ai_outline | 143 | 8.0 (8–8) | 68.5% | [60.5, 75.6] |
+| ai_nometa | 106 | 8.0 (7–9) | 65.1% | [55.6, 73.5] |
+| ai_long | 185 | 12.0 (6–42) | 81.6% | [75.4, 86.5] |
+| neutral_rewrite | 243 | 16.0 (6–166) | 14.4% | [10.5, 19.4] |
+| ours | 472 | 39.0 (6–103) | 5.9% | [4.1, 8.4] |
+
+- **160 维变体**：直生族 78.3–98.3%、改写 26.7%、ours 46.4%；与 94 维差异大，故不混表。
+- **结论**：这是新训练协议下的敏感性表，**不是** §J.12 旧矩阵的复现；旧矩阵的模型/数据未完整保留，
+  不能把两组数拼成同一张 CI 表。主文保留旧矩阵的描述性边界，逐格表进 supplement。
 
 ---
 
