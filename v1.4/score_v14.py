@@ -9,6 +9,8 @@ BASE=os.path.join(HERE,"_poemguard_v4_206.pkl"); HEAD=os.path.join(HERE,"_compos
 W=np.load(HEAD,allow_pickle=True); B=__import__("pickle").load(io.open(BASE,"rb"))
 D=JD.Detector(path=os.path.join(os.path.dirname(HERE),"_det_multi14.pkl"),model="__x__"); D.use_tok=True; D.use_cpu_surp=True
 def score(lines,title=""):
+    if len([x for x in lines if str(x).strip()])<=14:
+        return {"pred":"use_v12_short_route","reason":"v1.4 applies to >=15 lines"}
     v=D._raw_feats([x.strip() for x in lines if x.strip()])
     if v is None: return {"error":"too short"}
     x160=np.array([v[k] for k in B["keys"][:160]],float)

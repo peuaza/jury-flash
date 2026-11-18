@@ -2,8 +2,12 @@
   "base": "poemguard_v4_206",
   "base_threshold": 0.298,
   "comp_threshold": 0.7,
-  "author_fp": 9.4,
-  "external68": 80.9,
+  "author_all_fp": 9.4,
+  "author_long_fp": 4.1,
+  "author_long_n": 49,
+  "author_short_fp": 75.0,
+  "author_short_n": 4,
+  "external68_short": "use v1.2 short head, not v1.4",
   "mimo_new": 88.6,
-  "validation": "real titles across train/eval; author 53 held out; external 68 + MiMo-new 35 held out; 46 head 5-fold OOF"
+  "validation": "real titles; author 53 held out; external 68 + MiMo-new 35 held out; 46 head 5-fold OOF; v1.4 applies to >=15 lines only"
 }
