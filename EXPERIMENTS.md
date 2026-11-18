@@ -6,6 +6,10 @@
 > provenance. Entries marked "pending verification" are provisional; no poem text is included. It is a
 > lab notebook, not a peer-reviewed document.
 
+> **Public research log.** This is the working experiment ledger behind the preprint, released for
+> provenance. Entries marked "pending verification" are provisional; no poem text is included. It is a
+> lab notebook, not a peer-reviewed document.
+
 # jury-flash · EXPERIMENTS
 
 > **本文件是 jury-flash 的唯一实验账本。** 任何新结果先在这里登记（§J 编号、日期、协议、数字、状态），
@@ -764,6 +768,16 @@
 - **结果**：原始短诗头检出 63.3%（outline）–94.1%（long）；neutral_poem 81.2%（n=16）、precise 89.8%、
   nometa 90.0%；三态 AI 56.7%–94.1%。
 - **限制**：这些组与短诗头训练集有重叠，不是干净留出；只能说明“跨 prompt/管线并非全崩”，不能当泛化证据。
+
+### §J.39 公开特征库（2026-11-18）· 现行
+
+- **产物**：`feature_bank_public.npz`，$8{,}409\times160$ 特征矩阵，`y` 0=人类/1=AI，`source` 来源名，
+  `keys` 与 `feature_dict.csv` 同序；**不含文本**。
+- **来源**：human1000 944、lccc 1,600、poke 207、古文 750、现代诗库 1,990；AI诗 592、同族472、
+  AI说明文 312、AI小说 240、AI古文 288、AI通知演讲稿 214、AI问答 195、AI散文 402、chat 40、
+  学术 98、书信 65。
+- **排除**：作者诗、People's Daily Online、CNKI、书信原文、公文；只发派生特征。
+- **限制**：不是 4,386 行 14 类训练矩阵，不能单独复现 DET 表；供特征空间检查/二次分析。
 
 ---
 
