@@ -838,6 +838,25 @@
 - **结论**：直生族训练对改写仅 ~11%、对 ours 0.8–3.4%；这是真正的跨范式留出，不是旧矩阵的重分类。
   仍未覆盖 poet-plan/swarm/cross-family；这三类仍只能引用旧描述性矩阵。
 
+### §J.43 非 DeepSeek 长诗中性与 thinking 对照（2026-11-18）· 现行
+
+- **生成**：同 prompt（严格 42–56 行、中性主题），MiMo `mimo-v2.6-flash` thinking-on/off；
+  DeepSeek `deepseek-flash` thinking-on/off。MiMo-on 120 次调用得 110 首合规；DeepSeek-on 60/60；
+  DeepSeek-off 45/60；MiMo-off 59。
+- **评分**：v21/v23 160 维，FP5 阈值取 ≥15 行人类分位（0.2382 / 0.1488）。
+
+| 组 | n | v21 检出 | Wilson CI | v23 检出 |
+|---|---:|---:|---:|---:|
+| MiMo-on | 110 | **40.0%**（44） | [31.3,49.3] | 29.1% |
+| MiMo-off | 59 | 39.0%（23） | [27.6,51.7] | 28.8% |
+| DeepSeek-on | 60 | **100%**（60） | [94.0,100] | 85.0% |
+| DeepSeek-off | 45 | 57.8%（26） | [43.3,71.0] | 48.9% |
+
+- **结论**：同一长度/prompt 下，非 DeepSeek 长诗中性的 v21 检出 40%，DeepSeek-on 100%；
+  MiMo 内部 thinking on/off 只差 1pp，DeepSeek 内部差 42pp。主差异是模型族，不是 MiMo 的 thinking 开关。
+- **限制**：n 不等（110 vs 60/45/59）；thinking 预算是模型自适应的，不是等算力；未做独立文学质量评分。
+  不能写成“MiMo 质量差”，只能写成“检测器对 MiMo 长诗中性的检出显著更低”。
+
 ---
 
 ## 3. 论文同步表
