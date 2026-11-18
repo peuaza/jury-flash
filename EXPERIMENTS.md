@@ -749,6 +749,8 @@
 
 - **做法**：用 v21 直接评 `ai_precise/ai_few2/ai_cold/ai_poems/ai_outline/ai_nometa/ai_long/neutral_rewrite/ours`，
   按 §J.36 的 n/行数统计；阈值取 ≥15 行人类 FP3/FP5。
+- **首跑失败**：脚本加载 v21 后 `use_tok/use_cpu_surp` 默认 False，`_raw_feats` 只返回 94 维，
+  所有格 `n=0`；显式置 True 后才得到 160 维。仪器坑：评 160 维模型前必须确认特征维数。
 - **结果**：这些格子在 v21 训练集内，检出 $90$–$98\%$（ours $99.6\%$），**不能复现** §J.12 的留一
   $43$–$86\%$；n/行数可记（precise 118、few2 96、cold 72、poems 221、outline 143、nometa 106、long 185、
   rewrite 243、ours 472；中位 8–39 行）。
