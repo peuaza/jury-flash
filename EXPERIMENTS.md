@@ -18,6 +18,10 @@
 > provenance. Entries marked "pending verification" are provisional; no poem text is included. It is a
 > lab notebook, not a peer-reviewed document.
 
+> **Public research log.** This is the working experiment ledger behind the preprint, released for
+> provenance. Entries marked "pending verification" are provisional; no poem text is included. It is a
+> lab notebook, not a peer-reviewed document.
+
 # jury-flash · EXPERIMENTS
 
 > **本文件是 jury-flash 的唯一实验账本。** 任何新结果先在这里登记（§J 编号、日期、协议、数字、状态），
@@ -817,6 +821,22 @@
 - **160 维变体**：直生族 78.3–98.3%、改写 26.7%、ours 46.4%；与 94 维差异大，故不混表。
 - **结论**：这是新训练协议下的敏感性表，**不是** §J.12 旧矩阵的复现；旧矩阵的模型/数据未完整保留，
   不能把两组数拼成同一张 CI 表。主文保留旧矩阵的描述性边界，逐格表进 supplement。
+
+### §J.42 真范式 holdout：train-direct / test-other（2026-11-18）· 现行
+
+- **协议**：训练只用 7 个直生格（ai_precise/few2/cold/poems/outline/nometa/long，共 941 条）+ 人类池
+  2,745 条；人类校准 2,746 条；FP5；测试集完全留出：改写 243、ours 472。逻辑回归。
+- **结果**：
+
+| 特征 | 测试范式 | n | FP5 检出 | Wilson 95% CI |
+|---|---|---:|---:|---:|
+| 94 结构 | paraphrase | 243 | **10.7%**（26） | [7.4,15.2] |
+| 94 结构 | ours | 472 | **0.8%**（4） | [0.3,2.2] |
+| 160 全量 | paraphrase | 243 | **11.5%**（28） | [8.1,16.1] |
+| 160 全量 | ours | 472 | **3.4%**（16） | [2.1,5.4] |
+
+- **结论**：直生族训练对改写仅 ~11%、对 ours 0.8–3.4%；这是真正的跨范式留出，不是旧矩阵的重分类。
+  仍未覆盖 poet-plan/swarm/cross-family；这三类仍只能引用旧描述性矩阵。
 
 ---
 
