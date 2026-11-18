@@ -106,25 +106,24 @@ licence does not cover the weights.
 ## 6. Reproduction commands
 
 ```bash
-# exam table
-python _score_exam.py _det_multi14.pkl        # 160-dim models
-python _score_struct_exam.py                    # 94-dim specialist head
-
-# DET + Wilson/bootstrap CI (needs the feature caches)
-python _det_ci.py
-
-# v1.2 router
+# v1.2 three-state router (released)
 python score_v12.py poem.txt
+
+# v1.1 per-length router (released in the repo)
+python score_v11rc.py poem.txt
 ```
 
-The feature caches (`_feat_all.pkl`, `_pastiche_feats.npz`, `_shorthuman_feats.npz`, `_human_bands_feats.npz`)
-are currently local and **not** part of the release; packaging them (or a feature-bank export without texts)
-is the remaining reproducibility task.
+The exam and DET tables require withheld exam texts and the feature caches; they are **not** reproducible
+from the public archive alone. The public `feature_bank_public.npz` contains 8,409 × 160 feature vectors
+with human/AI labels and source names, but not the exact 14-class training split. Do not promise a
+one-command exam reproduction from this package.
 
 ## 7. Repository and DOI
 
-- Repository: `https://github.com/peuaza/jury-flash` (origin configured; **no tag pushed yet**).
-- DOI: not assigned; plan is a Zenodo archive of the tagged release.
+- Repository: `https://github.com/peuaza/jury-flash` (tag `v1.2.0-rc`; later documentation commits are on `main`).
+- Concept DOI: `10.5281/zenodo.24321108`; v1.1 version DOI: `10.5281/zenodo.24330765`.
+- The Zenodo v1.1 record predates §J.36–§J.41 and the feature bank; the local release folder is newer than
+  the published snapshot.
 - Model files are not committed to git (see `MODELS.md`); they are distributed via release archives.
 
 ## 8. Known gaps
