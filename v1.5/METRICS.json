@@ -1,0 +1,14 @@
+{
+  "base": "poemguard_v5_206",
+  "base_threshold": 0.292,
+  "comp_threshold": 0.8,
+  "author_all_fp": 7.5,
+  "author_long_fp": 4.1,
+  "author_long_n": 49,
+  "author_short_fp": 50.0,
+  "author_short_n": 4,
+  "external68_short": "v1.2 short route",
+  "external68_long_placeholder": 79.4,
+  "mimo_new": 97.1,
+  "validation": "real titles; 4,924 human poems; author 53 held out; external 68 + MiMo-new 35 held out; 46 head 5-fold OOF; v1.5 >=15 lines only"
+}
