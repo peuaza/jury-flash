@@ -1,0 +1,9 @@
+{
+  "base": "poemguard_v4_206",
+  "base_threshold": 0.298,
+  "comp_threshold": 0.7,
+  "author_fp": 9.4,
+  "external68": 80.9,
+  "mimo_new": 88.6,
+  "validation": "real titles across train/eval; author 53 held out; external 68 + MiMo-new 35 held out; 46 head 5-fold OOF"
+}
