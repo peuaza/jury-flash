@@ -2,6 +2,10 @@
 > provenance. Entries marked "pending verification" are provisional; no poem text is included. It is a
 > lab notebook, not a peer-reviewed document.
 
+> **Public research log.** This is the working experiment ledger behind the preprint, released for
+> provenance. Entries marked "pending verification" are provisional; no poem text is included. It is a
+> lab notebook, not a peer-reviewed document.
+
 # jury-flash · EXPERIMENTS
 
 > **本文件是 jury-flash 的唯一实验账本。** 任何新结果先在这里登记（§J 编号、日期、协议、数字、状态），
@@ -626,7 +630,7 @@
   | 外部 6–9 行（48） | **85.4%**（41） | 5.1%（572） |
   | 外部 10–14 行（20） | **85.0%**（17） | 5.0%（500） |
   | 外部全部 68（原始） | 85.3%（58）[75,92] | — |
-  | 外部去污染 63 | **84.1%**（53）[74,91] | — |
+  | 外部去污染 63 | **84.1%**（53）[73,91] | — |
   | v23 同集 | 47% | — |
 
 - **作者诗上的 FP**：the author's poems 53 首中只有 4 首落在 6–14 行（其余 >14 行不适用短诗头）；这 4 首中 **3 首被判 AI**（n=4，不能当稳定估计，但说明短诗头不能直接用于作者本人）。
@@ -727,6 +731,37 @@
   考试 **0/18**；FP10 下 10.3%/10.3%/0/18。
 - **结论**：QA 语料训练的公开中文检测器迁移到诗歌近乎失效；这不是“强 baseline”，但补齐了
   “公开中文监督检测器”这一格。结构模型同集 35%/49%/84%、考试 17/18。
+
+### §J.36 短诗头独立人类源 FP（2026-11-18）· 现行
+
+- **语料**：`corpus_modern/modern_poems.jsonl`，6–14 行；排除短诗头训练/校准/bands 中出现过的诗人与标题
+  （`_shorthuman_feats` 572、`_shorthuman_train` 1,141、`_human_10_14_train` 998、`_human_bands` 800）。
+  得到 **496 首、371 位未见诗人**；6–9 行 130 首、10–14 行 366 首。
+- **原始短诗头**（分档阈值）：6–9 **3.1%**（4/130）[1.2,7.6]；10–14 **8.5%**（31/366）[6.0,11.8]；
+  全部 **7.1%**（35/496）[5.1,9.7]。
+- **v1.2 三态（短诗头 + v23 一致）**：AI **3.0%**（15/496）[1.8,4.9]、人类 89%、不确定 8%；
+  6–9 2.3%（3/130）、10–14 3.3%（12/366）。
+- **对照**：校准集 FP 5.1%/5.0%；作者 4 首短诗原始 3/4、三态 1 AI/2 不确定/1 人类（n=4）。
+- **结论**：独立源上原始头 FP 7.1%，高于校准的 5%；10–14 行更易误报。三态把硬误报压到 3.0%，
+  代价是 8% 不确定。短诗头仍只能作为研究/激进模式。
+
+### §J.37 范式矩阵逐格复核尝试（2026-11-18）· 负结果
+
+- **做法**：用 v21 直接评 `ai_precise/ai_few2/ai_cold/ai_poems/ai_outline/ai_nometa/ai_long/neutral_rewrite/ours`，
+  按 §J.36 的 n/行数统计；阈值取 ≥15 行人类 FP3/FP5。
+- **结果**：这些格子在 v21 训练集内，检出 $90$–$98\%$（ours $99.6\%$），**不能复现** §J.12 的留一
+  $43$–$86\%$；n/行数可记（precise 118、few2 96、cold 72、poems 221、outline 143、nometa 106、long 185、
+  rewrite 243、ours 472；中位 8–39 行）。
+- **结论**：逐格 CI 必须按“留一范式重训”才能得到，不能用现有模型的样本内分数冒充；论文维持描述性边界，
+  不补伪 CI。
+
+### §J.38 短诗头跨管线 AI（2026-11-18）· 描述性
+
+- **做法**：从 7 个 AI 诗组（neutral_poem/precise/cold/few2/outline/nometa/long）取 6–14 行，随机 300 首，
+  用 v1.2 短诗头/三态评分。
+- **结果**：原始短诗头检出 63.3%（outline）–94.1%（long）；neutral_poem 81.2%（n=16）、precise 89.8%、
+  nometa 90.0%；三态 AI 56.7%–94.1%。
+- **限制**：这些组与短诗头训练集有重叠，不是干净留出；只能说明“跨 prompt/管线并非全崩”，不能当泛化证据。
 
 ---
 
