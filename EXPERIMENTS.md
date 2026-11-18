@@ -10,6 +10,10 @@
 > provenance. Entries marked "pending verification" are provisional; no poem text is included. It is a
 > lab notebook, not a peer-reviewed document.
 
+> **Public research log.** This is the working experiment ledger behind the preprint, released for
+> provenance. Entries marked "pending verification" are provisional; no poem text is included. It is a
+> lab notebook, not a peer-reviewed document.
+
 # jury-flash · EXPERIMENTS
 
 > **本文件是 jury-flash 的唯一实验账本。** 任何新结果先在这里登记（§J 编号、日期、协议、数字、状态），
@@ -778,6 +782,15 @@
   学术 98、书信 65。
 - **排除**：作者诗、People's Daily Online、CNKI、书信原文、公文；只发派生特征。
 - **限制**：不是 4,386 行 14 类训练矩阵，不能单独复现 DET 表；供特征空间检查/二次分析。
+
+### §J.40 干净跨管线短诗（2026-11-18）· 现行
+
+- **生成**：`deepseek-flash` + 中性 prompt（只说主题与行数，不做诗人模仿）、$6$–$14$ 行；
+  $120/120$ 成功，$61$ 秒；成本低于一元。与训练用的 `deepseek-chat` 定向仿作是不同模型/提示。
+- **短诗头原始检出**：**94.2%**（113/120）[88.4,97.1]；6–9 行 93.1%（54/58）、10–14 行 95.2%（59/62）。
+- **v1.2 三态**：AI **92.5%**（111/120）[86.4,96.0]，人类 4、不确定 5。
+- **结论**：干净跨管线不是崩，而是接近同分布；B2 的“只对同管线有效”担忧被这组数据反驳。
+  独立人类 FP 仍按 §J.36：原始 7.1%、三态 AI 3.0%。
 
 ---
 
