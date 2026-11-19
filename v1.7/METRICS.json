@@ -1,0 +1,15 @@
+{
+  "base": "poemguard_v7_206",
+  "base_threshold": 0.2927,
+  "comp_threshold": 0.8,
+  "author_remaining_n": 51,
+  "author_long_fp": 0.0,
+  "author_all_remaining": 3.9,
+  "external68": 80.9,
+  "mimo_new": 100.0,
+  "added_human_negatives": [
+    "游行",
+    "半永久暗房"
+  ],
+  "validation": "2 extreme author poems added as human negatives; remaining 51 held out; external/MiMo base held out; head in-sample for external/MiMo; short route v1.2"
+}
