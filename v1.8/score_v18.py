@@ -13,7 +13,8 @@ def score(lines,title=""):
  if n<6: return {"error":"too short","n":n}
  v=D._raw_feats(L); c=comp(L,title)
  if n<=14:
-  x=np.r_[[v[k] for k in S["keys"][:160]],[c[k] for k in S["keys"][160:]]]; z=(x-S["mean"])/S["scale"]; p=float(1/(1+np.exp(-(z@S["coef"]+S["intercept"])))); return {"pred":"AI" if p>=float(S["thr"]) else "human","p_short":round(p,4),"n":n}
+  x46=np.array([0.0 if (k.startswith("comp_title_") or k=="comp_n_lines") else c[k] for k in S["keys"][160:]])
+  x=np.r_[[v[k] for k in S["keys"][:160]],x46]; z=(x-S["mean"])/S["scale"]; p=float(1/(1+np.exp(-(z@S["coef"]+S["intercept"])))); return {"pred":"AI" if p>=float(S["thr"]) else "human","p_short":round(p,4),"n":n}
  x=np.r_[[v[k] for k in B["keys"][:160]],[c[k] for k in B["keys"][160:]]]; z=(x-B["mean"])/B["scale"]; pb=float(1/(1+np.exp(-(z@B["coef"]+B["intercept"])))); ch=(x[160:]-H["mean"])/H["scale"]; ph=float(1/(1+np.exp(-(ch@H["coef"]+H["intercept"])))); return {"pred":"AI" if (pb>=0.292687 and ph<0.8) else "human","p_base":round(pb,4),"p_author":round(ph,4),"n":n}
 if __name__=="__main__":
  ap=argparse.ArgumentParser(); ap.add_argument("path"); ap.add_argument("--title",default=""); a=ap.parse_args(); L=io.open(a.path,encoding="utf-8",errors="replace").read().splitlines(); print(json.dumps(score(L,a.title),ensure_ascii=False))

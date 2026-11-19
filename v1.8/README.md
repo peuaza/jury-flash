@@ -25,4 +25,4 @@ Author long FP **0/47**; MiMo-new 100% (head in-sample; OOF 97.1%); external-68 
 - Earlier 100% external / 98% pastiche was a script bug: pastiche was still in `AI.append(P206[tr])`.
   That line is removed; use the numbers above.
 - v1.8 is a candidate; not tagged or published.
-- Short model includes the author's 4 short poems as human training examples; author-short is therefore in-sample.
+- Short model includes the author's 4 short poems as human training examples; author-short is therefore in-sample, and the standalone short head still flags some of them. Do not claim author-short safe from v1.8; use the v1.2 three-state route for author short.
