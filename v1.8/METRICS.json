@@ -1,0 +1,16 @@
+{
+  "short_model": "_short_v20.npz",
+  "short_threshold": 0.067,
+  "short_external68": 97.1,
+  "short_pastiche249": 90.0,
+  "short_human_fp": 5.1,
+  "long_base": "_poemguard_v7_206.pkl",
+  "long_head": "_composition_head_v7.npz",
+  "long_base_threshold": 0.292687,
+  "long_head_threshold": 0.8,
+  "long_author_fp": 0.0,
+  "long_author_n": 47,
+  "long_external68_in_sample": 80.9,
+  "long_mimo_new": 100.0,
+  "notes": "short 206: no title/n_lines, no pastiche training; long v1.7 includes 2 extreme author negatives"
+}
